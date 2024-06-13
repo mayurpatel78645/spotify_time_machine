@@ -1,0 +1,100 @@
+N0 1:  Baharon Phool Barsao - Suraj
+N0 2:  Awaara Hoon - Awaara
+N0 3:  Tujhe Dekha To - Dilwale Dulhania Le Jayenge
+N0 4:  Ajeeb Dastan Hai Yeh - Dil Apna Aur Preet Parai
+N0 5:  Kabhi Kabhi Mere Dil Mein - Kabhi Kabhie
+N0 6:  Tere Liye - Veer-Zaara
+N0 7:  Yeh Dosti - Sholay
+N0 8:  Pyar Kiya To Darna Kya - Mughal-e-Azam
+N0 9:  Chaiyya Chaiyya - Dil Se..
+N0 10:  Chalte Chalte - Pakeezah
+N0 11:  Kal Ho Naa Ho - Kal Ho Naa Ho
+N0 12:  Aaj Phir Jeene Ki Tamanna - Guide
+N0 13:  Kuch Kuch Hota Hai - Kuch Kuch Hota Hai
+N0 14:  Mauja Hi Mauja - Jab We Met
+N0 15:  Ae Mere Humsafar - Qayamat Se Qayamat Tak
+N0 16:  Chaudhvin Ka Chand Ho - Chaudhvin Ka Chand
+N0 17:  Aaja Sanam - Chori Chori
+N0 18:  Pehla Nasha - Jo Jeeta Wohi Sikandar
+N0 19:  Dheere Dheere Se - Aashiqui
+N0 20:  Chura Liya Hai Tumne Jo Dil Ko - Yaadon Ki Baaraat
+N0 21:  Maa - Taare Zameen Par
+N0 22:  In Ankhon Ki Masti - Umrao Jaan
+N0 23:  Saathi Re - Muqaddar Ka Sikandar
+N0 24:  Pyar Hua Iqrar Hua - Shree 420
+N0 25:  Munni Badnaam - Dabangg
+N0 26:  Yeh Zindagi Usiki Hai - Anarkali
+N0 27:  Bole Chudiyan - Kabhi Khushi Kabhie Gham
+N0 28:  Kehna Hi Kya - Bombay
+N0 29:  Chand Sifarish - Fanaa
+N0 30:  Dil Deewana - Maine Pyar Kiya
+N0 31:  Ek Ladki Ko Dekha To - 1942: A Love Story
+N0 32:  Mere Dil Ke Chain - Mere Jeevan Saathi
+N0 33:  Tere Bina - Guru
+N0 34:  Tumhi Mere Mandir - Khandan
+N0 35:  Dekha Ek Khwab - Silsila
+N0 36:  Kate Nahin Kat Te - Mr India
+N0 37:  Aaja Tujhko Pukare Mera Pyar - Neel Kamal
+N0 38:  Jane Woh Kaise Log The - Pyaasa
+N0 39:  Yeh Zindagi Ke Mele - Mela
+N0 40:  Yeh Galiyan Yeh Chaubara - Prem Rog
+N0 41:  Aap Jaisa Koi - Qurbani
+N0 42:  Dum Maro Dum - Hare Rama Hare Krishna
+N0 43:  Yeh Sama Sama Hai Ye Pyar Ka - Jab Jab Phool Khile
+N0 44:  Khoya Khoya Chand - Kala Bazar
+N0 45:  Ayega Aanewala - Mahal
+N0 46:  Deewangi Deewangi - Om Shanti Om
+N0 47:  Didi Tera Devar Deewana - Hum Aapke Hain Koun
+N0 48:  O Re Chori - Lagaan
+N0 49:  Aaja Re Pardesi - Madhumati
+N0 50:  Choli Ke Peeche - Khalnayak
+N0 51:  Roop Tera Mastana - Aradhana
+N0 52:  Ude Jab Jab Zulfein Teri - Naya Daur
+N0 53:  Maar Dala - Devdas
+N0 54:  Tu Ganga Ki Mauj - Baiju Bawra
+N0 55:  Tu Mera Jaanu Hai - Hero
+N0 56:  Yahoo Chahe Koi Mujhe Junglee Kahen - Junglee
+N0 57:  Dekha Hai Pehli Baar - Saajan
+N0 58:  Guzarish - Ghajini
+N0 59:  Kya Khoob Lagti Ho - Dharmatma
+N0 60:  O Haseena Zulfo Wali - Teesri Manzil
+N0 61:  Pardesi Pardesi - Raja Hindustani
+N0 62:  Tip Tip Barsa Paani - Mohra
+N0 63:  Bahon Ke Darmiyan - Khamoshi
+N0 64:  Jaadu Teri Nazar - Darr
+N0 65:  Afsana Likh Rahi Hoon - Dard
+N0 66:  Yeh Mera Dil Yaar Ka Diwana - Don
+N0 67:  Beedi - Omkara
+N0 68:  Babuji Dheere Chalna - Aar Paar
+N0 69:  Mujhe Neend Na Aaye - Dil
+N0 70:  Main Na Bhoolunga - Roti Kapada Aur Makaan
+N0 71:  Mere Naseeb Mein - Naseeb
+N0 72:  Yeh Hai Bombay Meri Jaan - C.I.D
+N0 73:  Hum Tum Ek Kamre Mein Band Ho - Bobby
+N0 74:  Kajra Re - Bunty Aur Babli
+N0 75:  Jumma Chumma De De - Hum
+N0 76:  Chod Do Anchal Zamana Kya Kahega - Paying Guest
+N0 77:  Dhak Dhak Karne Laga - Beta
+N0 78:  Ek Do Teen - Tezaab
+N0 79:  Hum Bane Tum Bane - Ek Duje Ke Liye
+N0 80:  O Meri Mehbooba - Dharam Veer
+N0 81:  Sun Sahiba Sun - Ram Teri Ganga Maili
+N0 82:  Tera Mera Pyar Amar - Asli Naqli
+N0 83:  Man Dole Mera Tan Dole - Nagin
+N0 84:  Sun Ja Dil Ki Dastan - Jaal
+N0 85:  Awaaz De Kahan Hai - Anmol Ghadi
+N0 86:  Humko Tumse Ho Gaya Hai Pyar - Amar Akbar Anthony
+N0 87:  Mera Naam Chin Chin Chu - Howrah Bridge
+N0 88:  Om Shaanti Om - Karz
+N0 89:  Piya Tu Ab To Aaja - Caravan 
+N0 90:  Honton Mein Aisi Baat - Jewel Thief
+N0 91:  Taarif Karoon Kya Uski - Kashmir Ki Kali
+N0 92:  Eena Meena Deeka - Aasha
+N0 93:  Jai Jai Shiv Shankar - Aap Ki Kasam
+N0 94:  Bol Radha Bol - Sangam
+N0 95:  Hawa Mein Udta Jaaye - Barsaat
+N0 96:  Dum Dum Diga Diga - Chhalia
+N0 97:  Raja Ki Aayegi Baraat - Aah
+N0 98:  Tod Diya Dil Mera Tune - Andaz 
+N0 99:  Ankhiyan Milake - Rattan
+N0 100:  Jawani Janeman - Namak Halaal

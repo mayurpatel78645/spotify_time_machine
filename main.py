@@ -9,5 +9,6 @@ soup = BeautifulSoup(response, "html.parser")
 
 bollywood_titles = [title.getText() for title in soup.select(".intro") if "-" in title.getText()][1:]
 
-for title in bollywood_titles:
-    print(title)
+with open("bollywood.txt", "w") as file:
+    for title in bollywood_titles:
+        file.write(f"{title}\n")
