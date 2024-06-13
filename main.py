@@ -1,75 +1,74 @@
-import requests
-import spotipy
-from bs4 import BeautifulSoup
-from spotipy.oauth2 import SpotifyClientCredentials, SpotifyOAuth
-
-client_id = "753950aa9d774c55bc0394bdfa71f77d"
-client_secret = "a7324f74b2dc4cb39dbaa3cf2d0d34d4"
-
-# Scopes required for playlist modification
-scope = 'playlist-modify-public playlist-modify-private'
-
-# Authenticate with Spotify using Client Credentials flow
-client_credentials_manager = SpotifyClientCredentials(client_id=client_id, client_secret=client_secret)
-sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
-
-redirect_uri = 'http://example.com'  # Set this in your Spotify Developer Dashboard
-
-sp_oauth = SpotifyOAuth(client_id=client_id, client_secret=client_secret, redirect_uri=redirect_uri, scope=scope)
-
-token_info = sp_oauth.get_cached_token()
-
-if not token_info:
-    auth_url = sp_oauth.get_authorize_url()
-    print(f"Please visit this URL to authorize access: {auth_url}")
-    response = input('Enter the URL you were redirected to: ')
-    code = sp_oauth.parse_response_code(response)
-    token_info = sp_oauth.get_cached_token()
-
-sp = spotipy.Spotify(auth=token_info['access_token'])
-
-# Example: Create a new playlist
-playlist_name = 'My Test Playlist'
-user_id = 'mayurpatel78645'  # Replace with your Spotify user ID
-
-# Create the playlist
-playlist = sp.user_playlist_create(user=user_id, name=playlist_name, public=False)
-playlist_id = playlist['id']
-
-# Example: Search for a track by name
-track_name = 'Shape of You'  # Example track name
-results = sp.search(q=track_name, limit=1, type='track')
-
-# Add the first track found to the new playlist
-if results['tracks']['items']:
-    track_uri = results['tracks']['items'][0]['uri']
-    sp.playlist_add_items(playlist_id, [track_uri])
-    print(f"Track '{track_name}' added to playlist '{playlist_name}' successfully.")
-else:
-    print(f"No track found with name '{track_name}'")
-
-bollywood_url = "https://www.bbc.co.uk/asiannetwork/vote/top-songs/"
-hollywood_url = "https://www.billboard.com/charts/hot-100/2016-07-02/"
-urls = [bollywood_url, hollywood_url]
+from scraper import WebScraper
+from spotify_api import SpotifyAPI
+from dotenv import load_dotenv
+import os
+from datetime import datetime
 
 
-def scrape(url):
-    request = requests.get(url)
-    response = request.text
-    soup = BeautifulSoup(response, "html.parser")
-    if "billboard" in url:
-        titles = [song.getText().strip() for song in soup.select("h3") if ":" not in song.getText()][3:103]
-    else:
-        titles = [song.getText() for song in soup.select(".intro") if "-" in song.getText()][1:]
-    return titles
+class SpotifyPlaylistCreator:
+    def __init__(self, client_id, client_secret, redirect_uri, scope):
+        self.spotify_api = SpotifyAPI(client_id, client_secret, redirect_uri, scope)
+        self.web_scraper = WebScraper()
+
+    def create_playlist_from_url(self, user_id, playlist_name, url):
+        # Authenticate Spotify API
+        self.spotify_api.authenticate_authorization_code_flow()
+
+        # Create playlist
+        playlist_id = self.spotify_api.create_playlist(user_id, playlist_name, public=False)
+
+        # Scrape titles from URL and add tracks to playlist
+        titles = self.web_scraper.scrape(url)
+        for title in titles:
+            # Search for track
+            track_results = self.spotify_api.search_track(title)
+            if track_results:
+                track_uri = track_results[0]['uri']
+                # Add track to playlist
+                self.spotify_api.add_track_to_playlist(playlist_id, track_uri)
+            else:
+                print(f"No track found for '{title}'")
 
 
-def create_txt_file(file_name, url):
-    bollywood_titles = scrape(url)
-    with open(f"{file_name}.txt", "w") as file:
-        for title in bollywood_titles:
-            file.write(f"{title}\n")
+if __name__ == "__main__":
+    # Load environment variables from .env file
+    load_dotenv()
+
+    # Access environment variables
+    spotify_user_id = os.getenv("SPOTIFY_USER_ID")
+    spotify_client_id = os.getenv("SPOTIFY_CLIENT_ID")
+    spotify_client_secret = os.getenv("SPOTIFY_CLIENT_SECRET")
+    spotify_redirect_uri = os.getenv("SPOTIFY_REDIRECT_URI")
+    scope = 'playlist-modify-public playlist-modify-private'
+
+    spotify_playlist_creator = SpotifyPlaylistCreator(spotify_client_id, spotify_client_secret, spotify_redirect_uri,
+                                                      scope)
+
+    user_id = spotify_user_id
+
+    get_date = input("Enter a date to create a playlist of top 100 songs of that time (e.g. 2016-07-02): ")
 
 
-# for url in urls:
-#     create_txt_file("hollywood" if "billboard" in url else "bollywood", url)
+    def is_valid_date(date_string):
+        try:
+            # Attempt to parse the date string
+            datetime.strptime(date_string, '%Y-%m-%d')
+            return True
+        except ValueError:
+            return False
+
+
+    while True:
+        date_input = input("Enter a date to create a playlist of top 100 songs of that time (e.g. 2016-07-02): ")
+        if is_valid_date(date_input):
+            break
+        else:
+            print(f"The date '{date_input}' is not in the correct format (YYYY-MM-DD). Please enter a valid date.")
+
+    playlist_name = f"{date_input} Billboard 100"
+    # bollywood_url = "https://www.bbc.co.uk/asiannetwork/vote/top-songs/"
+    hollywood_url = f"https://www.billboard.com/charts/hot-100/{date_input}/"
+    # Create playlist from Bollywood and Hollywood URLs
+    # spotify_playlist_creator.create_playlist_from_url(user_id, "Bollywood 100", bollywood_url)
+    spotify_playlist_creator.create_playlist_from_url(user_id, playlist_name, hollywood_url)
+
